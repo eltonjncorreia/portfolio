@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5">
+        <!-- Contact form-->
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i
+                        class="bi bi-envelope"></i></div>
+                <h1 class="fw-bolder">Entre em contato</h1>
+                <p class="lead fw-normal text-muted mb-0">Solicite um orçamento</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" method="post" action="/contact">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..."
+                                   data-sb-validations="required"/>
+                            <label for="name">Seu Nome</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com"
+                                   data-sb-validations="required,email"/>
+                            <label for="email">Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Email é obrigaório.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890"/>
+                            <label for="phone">Telefone</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">O Telefone é obrigatório
+                            </div>
+                        </div>
+                        <!-- subject -->
+                        <div class="form-floating mb-3">
+                            <select id="subject" class="form-select" name="subject" aria-label="Default select example">
+                                <option value="1">Orçamento</option>
+                                <option value="2">Feedback</option>
+                                <option value="3">Reclamação</option>
+                            </select>
+
+                            <label for="subject">Assunto</label>
+                            <div class="invalid-feedback" data-sb-feedback="subject:required">O assunto é obrigatório
+                            </div>
+                        </div>
+
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" type="text"
+                                      placeholder="Enter your message here..." style="height: 10rem"
+                                      data-sb-validations="required"></textarea>
+                            <label for="message">Mensagem</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Mensagem é obrigatório.
+                            </div>
+                        </div>
+
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
