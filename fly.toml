@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for eltoncorreia on 2023-11-24T09:38:15-03:00
+# fly.toml app configuration file generated for eltoncorreia on 2023-11-27T12:57:27-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = "eltoncorreia"
-primary_region = "gig"
+primary_region = "gru"
 
 [build]
 
@@ -15,3 +15,9 @@ primary_region = "gig"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
+
