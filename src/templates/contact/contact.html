@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="py-5">
-    <div class="container px-5">
+    <div class="container px-3">
         <!-- Contact form-->
         <div class="bg-light rounded-4 py-5 px-4 px-md-5">
             <div class="text-center mb-5">
@@ -23,22 +23,23 @@
                     <form id="contactForm" method="post" action="/contact">
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..."
-                                   data-sb-validations="required"/>
+                            <input class="form-control" id="name" name="name" type="text"
+                                placeholder="Enter your name..." data-sb-validations="required" />
                             <label for="name">Seu Nome</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório</div>
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com"
-                                   data-sb-validations="required,email"/>
+                            <input class="form-control" id="email" name="email" type="email"
+                                placeholder="name@example.com" data-sb-validations="required,email" />
                             <label for="email">Email</label>
                             <div class="invalid-feedback" data-sb-feedback="email:required">Email é obrigaório.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890"/>
+                            <input class="form-control" id="phone" name="phone" type="tel"
+                                placeholder="(123) 456-7890" />
                             <label for="phone">Telefone</label>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">O Telefone é obrigatório
                             </div>
@@ -59,8 +60,8 @@
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" name="message" type="text"
-                                      placeholder="Enter your message here..." style="height: 10rem"
-                                      data-sb-validations="required"></textarea>
+                                placeholder="Enter your message here..." style="height: 10rem"
+                                data-sb-validations="required"></textarea>
                             <label for="message">Mensagem</label>
                             <div class="invalid-feedback" data-sb-feedback="message:required">Mensagem é obrigatório.
                             </div>
