@@ -10,36 +10,31 @@ from src.db import get_session
 from src.models import ContactMessage
 
 router = APIRouter()
-templates = Jinja2Templates(directory='src/templates')
+templates = Jinja2Templates(directory="src/templates")
 
 
-@router.get('/')
+@router.get("/")
 def home(request: Request):
-    context = {
-        "request": request
-    }
-    return templates.TemplateResponse(name='home/index.html', context=context)
+    context = {"request": request}
+    return templates.TemplateResponse(name="home/index.html", context=context)
 
 
-@router.get('/contact')
+@router.get("/contact")
 def contact(request: Request):
-    context = {
-        "request": request
-    }
-    return templates.TemplateResponse(name='contact/contact.html', context=context)
+    context = {"request": request}
+    return templates.TemplateResponse(name="contact/contact.html", context=context)
 
 
-@router.post('/contact')
-async def contact(request: Request, session: Session = Depends(get_session)):
+@router.post("/contact")
+async def contact_create(request: Request, session: Session = Depends(get_session)):
+
     form: FormData = await request.form()
+    name = form.get("name")
 
     contact_dto: ContactDTO = ContactDTO(**form)
 
     manager: ContactManager = ContactManager(session)
     contact_model: ContactMessage = manager.create_new_contact(contact_dto)
 
-    context = {
-        "request": request,
-        "contact": contact_model
-    }
-    return templates.TemplateResponse(name='contact/contact.html', context=context)
+    context = {"request": request, "contact": contact_model}
+    return templates.TemplateResponse(name="contact/contact.html", context=context)
